@@ -9,6 +9,7 @@ Group:		Applications/Networking
 Source0:	http://www.earth.li/projectpurple/files/%{name}-%{version}.tar.gz
 # Source0-md5:	35fa3306f39bfd46d83371da63eec3ad
 URL:		http://www.earth.li/projectpurple/progs/sendip.html
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,15 +31,20 @@ wysy³ania b³êdnych sum kontrolnych.
 %prep
 %setup -q
 
+sed -i -e 's/ -g -W/ %{rpmcflags} -W/' Makefile
+
 %build
 %{__make} \
-	PREFIX=%{_prefix}
+	CC="%{__cc}" \
+	PREFIX=%{_prefix} \
+	LIBDIR=%{_libdir}/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	 PREFIX=$RPM_BUILD_ROOT%{_prefix}
+	 PREFIX=$RPM_BUILD_ROOT%{_prefix} \
+	 LIBDIR=$RPM_BUILD_ROOT%{_libdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
