@@ -9,7 +9,6 @@ Group:		Applications/Networking
 Source0:	http://www.earth.li/projectpurple/files/%{name}-%{version}.tar.gz
 # Source0-md5:	35fa3306f39bfd46d83371da63eec3ad
 URL:		http://www.earth.li/projectpurple/progs/sendip.html
-Requires:	%{name}-libs = %{epoch}:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,21 +22,10 @@ supported too.
 %description -l pl
 SendIP jest narzêdziem pozwalaj±cym wysy³aæ dowolne pakiety IP. SendIP
 posiada olbrzymi± liczbê opcji pozwalaj±cych opisaæ zawarto¶æ ka¿dego
-pola nag³owka RIP, RIPng, BGP, TCP, UDP, ICMP, lub surowego pakietu
+pola nag³ówka RIP, RIPng, BGP, TCP, UDP, ICMP, lub surowego pakietu
 IPv4/IPv6. SendIP pozwala dodaæ do pakietu dowolne dane. Sumy
-kontrolne s± obliczane automagicznie, ale je¿eli sobie ¿yczysz mo¿e
-byæ wys³ana b³êdna suma kontrolna.
-
-%package 	libs
-Summary:	SendIP shared libraries
-Summary(pl):	Biblioteki wspó³dzielone SendIP
-Group:		Libraries
-
-%description libs
-SendIP shared libraries.
-
-%description libs -l pl
-Biblioteki wspó³dzielone SendIP.
+kontrolne s± obliczane automagicznie, ale mo¿na za¿yczyæ sobie tak¿e
+wysy³ania b³êdnych sum kontrolnych.
 
 %prep
 %setup -q
@@ -55,16 +43,10 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   libs -p /sbin/ldconfig
-%postun libs -p /sbin/ldconfig
-
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README TODO
 %attr(755,root,root) %{_bindir}/%{name}
-%{_mandir}/man1/*
-
-%files 	libs
-%defattr(644,root,root,755)
 %dir %{_libdir}/%{name}
-%{_libdir}/%{name}/*
+%attr(755,root,root) %{_libdir}/%{name}/*.so
+%{_mandir}/man1/*
