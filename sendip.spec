@@ -1,5 +1,5 @@
 Summary:	SendIP is a commandline tool to allow sending arbitrary IP packets
-Summary(pl.UTF-8):   Narzędzie do wysyłania dowolnych pakietów IP
+Summary(pl.UTF-8):	Narzędzie do wysyłania dowolnych pakietów IP
 Name:		sendip
 Version:	2.5
 Release:	1
