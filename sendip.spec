@@ -1,5 +1,5 @@
 Summary:	SendIP is a commandline tool to allow sending arbitrary IP packets
-Summary(pl):	Narzêdzie do wysy³ania dowolnych pakietów IP
+Summary(pl.UTF-8):   NarzÄ™dzie do wysyÅ‚ania dowolnych pakietÃ³w IP
 Name:		sendip
 Version:	2.5
 Release:	1
@@ -20,13 +20,13 @@ allows any data to be added to the packet. Checksums can be calculated
 automatically, but if you wish to send out wrong checksums, that is
 supported too.
 
-%description -l pl
-SendIP jest narzêdziem pozwalaj±cym wysy³aæ dowolne pakiety IP. SendIP
-posiada olbrzymi± liczbê opcji pozwalaj±cych opisaæ zawarto¶æ ka¿dego
-pola nag³ówka RIP, RIPng, BGP, TCP, UDP, ICMP, lub surowego pakietu
-IPv4/IPv6. SendIP pozwala dodaæ do pakietu dowolne dane. Sumy
-kontrolne s± obliczane automagicznie, ale mo¿na za¿yczyæ sobie tak¿e
-wysy³ania b³êdnych sum kontrolnych.
+%description -l pl.UTF-8
+SendIP jest narzÄ™dziem pozwalajÄ…cym wysyÅ‚aÄ‡ dowolne pakiety IP. SendIP
+posiada olbrzymiÄ… liczbÄ™ opcji pozwalajÄ…cych opisaÄ‡ zawartoÅ›Ä‡ kaÅ¼dego
+pola nagÅ‚Ã³wka RIP, RIPng, BGP, TCP, UDP, ICMP, lub surowego pakietu
+IPv4/IPv6. SendIP pozwala dodaÄ‡ do pakietu dowolne dane. Sumy
+kontrolne sÄ… obliczane automagicznie, ale moÅ¼na zaÅ¼yczyÄ‡ sobie takÅ¼e
+wysyÅ‚ania bÅ‚Ä™dnych sum kontrolnych.
 
 %prep
 %setup -q
